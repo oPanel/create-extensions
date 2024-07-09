@@ -72,7 +72,7 @@ require_once('header.php');
 <?php
 require_once('footer.php');
 ```
-## WoM Apache Örnek Ypılandırma
+## WoM Apache Örnek Yapılandırma
 /usr/local/opanel/conf/httpd-admin-ModuleName.conf
 ```
 Alias "/ModuleName" "/usr/local/ModuleName/web/"
@@ -81,7 +81,7 @@ Alias "/ModuleName" "/usr/local/ModuleName/web/"
 </LocationMatch>
 ```
 
-## oPanel Apache Örnek Ypılandırma
+## oPanel Apache Örnek Yapılandırma
 /usr/local/opanel/conf/httpd-user-ModuleName.conf
 ```
 Alias "/ModuleName" "/usr/local/ModuleName/web/"
