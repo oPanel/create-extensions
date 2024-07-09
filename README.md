@@ -1,3 +1,6 @@
+[![en](https://img.shields.io/badge/lang-en-red.svg)](README.md)
+[![tr](https://img.shields.io/badge/lang-tr-yellow.svg)](README-TR.md)
+
 # oPanel Create/Add New Extensions
 
 ## Available Features List:
