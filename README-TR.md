@@ -89,3 +89,5 @@ Alias "/ModuleName" "/usr/local/ModuleName/web/"
         SetHandler "proxy:unix:/usr/local/opanel/tmp/php82-fpm.user.sock|fcgi://."
 </LocationMatch>
 ```
+> [!TIP]
+> Yapılandırma dosya oluşturmak için içinde default php sürümünü bu şekilde alabilirsiniz: ````$oPanel->config['php']['default']````
