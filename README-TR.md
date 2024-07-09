@@ -1,3 +1,6 @@
+[![tr](https://img.shields.io/badge/lang-tr-red.svg)](README-TR.md)
+[![en](https://img.shields.io/badge/lang-en-yellow.svg)](README.md)
+
 # oPanel Yeni Modül Oluşturma/Ekleme
 
 ## Kullanılabilecek Özellikler Listesi:
