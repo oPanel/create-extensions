@@ -89,3 +89,5 @@ Alias "/ModuleName" "/usr/local/ModuleName/web/"
         SetHandler "proxy:unix:/usr/local/opanel/tmp/php82-fpm.user.sock|fcgi://."
 </LocationMatch>
 ```
+> [!TIP]
+> You can get the default php version in your configuration file to create it this way: ````$oPanel->config['php']['default']````
