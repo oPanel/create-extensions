@@ -72,3 +72,20 @@ require_once('header.php');
 <?php
 require_once('footer.php');
 ```
+## WoM Apache Örnek Ypılandırma
+/usr/local/opanel/conf/httpd-admin-ModuleName.conf
+```
+Alias "/ModuleName" "/usr/local/ModuleName/web/"
+<LocationMatch "^/ModuleName/.*\.php$">
+        SetHandler "proxy:unix:/usr/local/opanel/tmp/php82-fpm.admin.sock|fcgi://."
+</LocationMatch>
+```
+
+## oPanel Apache Örnek Ypılandırma
+/usr/local/opanel/conf/httpd-user-ModuleName.conf
+```
+Alias "/ModuleName" "/usr/local/ModuleName/web/"
+<LocationMatch "^/ModuleName/.*\.php$">
+        SetHandler "proxy:unix:/usr/local/opanel/tmp/php82-fpm.user.sock|fcgi://."
+</LocationMatch>
+```
