@@ -6,6 +6,7 @@
 ## Kullanılabilecek Özellikler Listesi:
 * WoM Menü Ekleme
 * oPanel Menü Ekleme
+* Menülere icon ekleme
 * Güncelleme sistemine modül silinmemesi için dışlama ekleme
 * Apache için httpd.conf yapılandırması ekleme
 * Toplu modül dosyaları için özel dizin ekleme
@@ -15,6 +16,7 @@
 ## Özellikler Kullanım Detayı:
 * WoM Menü Eklemek için "/usr/local/opanel/www/admin/" dizini altına "extensions_ModuleName.php" şeklinde php dosyası oluşturmalısınız.
 * oPanel Menü Eklemek için "/usr/local/opanel/www/user/" dizini altına "extensions_ModuleName.php" şeklinde php dosyası oluşturmalısınız.
+* Wom ve oPanel menüleri için aynı isimde uzantısı svg,webp veya png sormatında bir resim (Önerilen format "extensions_ModuleName.svg" 48x48 Pixel) "/usr/local/opanel/www/assets/menus/" sizini altına yüklemelisiniz.
 * ```$update=$oPanel->setini('update');``` ile alınacak ```$update['panel']['noupdirs']``` bilgisini alarak mevcut liste altına "\n/usr/local/opanel/www/admin/extensions_ModuleName.php" gibi mevcut geçerli bir dosya veya klasör ekleyerek ```$oPanel->setini('update','panel/noupdirs',$update['panel']['noupdirs']);``` şeklinde 3.parametrede veri gönderilip kalıcı olarak kayıt edebilirsiniz. Bu sayede panel güncellemelerde silinmesini engellemelisiniz.
 * WoM için özel Apache yapılandırması eklemek için /usr/local/opanel/conf/httpd-admin-ModuleName.conf biçiminde, oPanel için özel Apache yapılandırması eklemek için /usr/local/opanel/conf/httpd-user-ModuleName.conf  biçiminde Apache parametrelerini içeren bir dosya oluşturun, ardından Apache'yi sıfırlayın veya "apachectl graceful" kullanın.
 * Modül için WoM ve oPanel URL erişimi sonuna /ext/ModuleName/ ekleyip çoklu dosya dizin oluşturmak için çoklu modül dosyalarını /usr/local/opanel/www/ext/ altında "ModuleName" gibi modül adında bir dizin oluşturarak http://WoM&oPanel/ext/ModuleName/ url adresi ile erişebilirsiniz. (Private logo/css/inc files ex.)
