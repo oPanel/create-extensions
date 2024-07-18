@@ -6,6 +6,7 @@
 ## Available Features List:
 * Adding WoM Menu
 * Adding oPanel Menu
+* Add icon to menus
 * Adding an exclusion to prevent the module from being deleted in the update system
 * Adding configuration to httpd.conf for Apache
 * Adding a special directory for bulk module files
@@ -13,8 +14,9 @@
 * Utilizing WoM and oPanel page format
 
 ## Detailed Usage of Features:
-* Adding WoM Menu: You need to create a PHP file named extensions_ModuleName.php under the directory /usr/local/opanel/www/admin/.
-* Adding oPanel Menu: You need to create a PHP file named extensions_ModuleName.php under the directory /usr/local/opanel/www/user/.
+* Adding WoM Menu: You need to create a PHP file named extensions_ModuleName.php under the directory "/usr/local/opanel/www/admin/"
+* Adding oPanel Menu: You need to create a PHP file named extensions_ModuleName.php under the directory "/usr/local/opanel/www/user/"
+* For Wom and oPanel menus you should upload an image with the same name and extension svg, webp or png (Recommended format "extensions_ModuleName.svg" 48x48 Pixel) under "/usr/local/opanel/www/assets/menus/"
 * Preventing Module Deletion in Updates: Use ```$update=$oPanel->setini('update');``` to get the ```$update['panel']['noupdirs']``` information, and add a valid file or folder under this list such as \n/usr/local/opanel/www/admin/extensions_ModuleName.php. This should be done by sending data in the 3rd parameter like ```$oPanel->setini('update','panel/noupdirs',$update['panel']['noupdirs']);``` to save it permanently, preventing deletion during panel updates.
 * Adding Apache Configuration: Create a file with Apache parameters in the format /usr/local/opanel/conf/httpd-admin-ModuleName.conf to add custom Apache configuration for WoM, in the format /usr/local/opanel/conf/httpd-user-ModuleName.conf to add custom Apache configuration for oPanel, then reset Apache or use "apachectl graceful"..
 * Creating Directory for Bulk Module Files: For module URL access, append /ext/ModuleName/ to the WoM and oPanel URL and create a directory named ModuleName under /usr/local/opanel/www/ext/ Access it via http://WoM&oPanel/ext/ModuleName/ for private logo, CSS, or inc files.
