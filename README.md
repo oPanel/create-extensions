@@ -51,7 +51,7 @@ require_once('footer.php');
 ## oPanel Page Format:
 ```php
 <?php
-require_once("../config/config.php");
+require_once("/usr/local/opanel/www/config/config.php");
 $Page	= [
 	'title_key'	=> substr(basename(__FILE__),0,-4),
 	'css_key'	=> substr(basename(__FILE__),0,-4),
@@ -72,6 +72,17 @@ require_once('header.php');
 
 <?php
 require_once('footer.php');
+```
+
+## CLI PHP Include:
+```php
+<?php
+define("MOD_CNF",['mod_name'=>'my_addon_name','mod_version'=>'1.0',]);
+require_once("/usr/local/opanel/www/config/oPanel.php");
+
+$oUser = $oPanel->ouser('<username>');
+$DBs = $oPanel->odbs($oUser);
+print_r($DBs);
 ```
 
 ## WoM Apache Example Configuration
