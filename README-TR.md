@@ -52,7 +52,7 @@ require_once('footer.php');
 ## oPanel Sayfa Formatı:
 ```php
 <?php
-require_once("../config/config.php");
+require_once("/usr/local/opanel/www/config/config.php");
 $Page	= [
 	'title_key'	=> substr(basename(__FILE__),0,-4),
 	'css_key'	=> substr(basename(__FILE__),0,-4),
@@ -61,7 +61,7 @@ $Page	= [
 ];
 if(isset($_POST['action'])){
 	if(...){
-		$Page['alert'][]=['success'=>"İşlem Başarılı"];
+		$Page['alert'][]=['success'=>"Action Success"];
 	}else{
 		$Page['alert'][]=['danger'=>$oPanel->lang('Error').": ..."];
 	}
@@ -74,6 +74,18 @@ require_once('header.php');
 <?php
 require_once('footer.php');
 ```
+
+## Komut Satırı için PHP Eklemesi:
+```php
+<?php
+define("MOD_CNF",['mod_name'=>'my_addon_name','mod_version'=>'1.0',]);
+require_once("/usr/local/opanel/www/config/oPanel.php");
+
+$oUser = $oPanel->ouser('<username>');
+$DBs = $oPanel->odbs($oUser);
+print_r($DBs);
+```
+
 ## WoM Apache Örnek Yapılandırma
 /usr/local/opanel/conf/httpd-admin-ModuleName.conf
 ```
